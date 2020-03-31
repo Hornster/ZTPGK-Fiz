@@ -10,12 +10,23 @@ public class CannonLoader : MonoBehaviour
     private GameObject _baseBulletPrefab;
 
     [SerializeField] private Transform _bulletSpawner;
+    /// <summary>
+    /// Assigned to each created bullet as parent. Keeps the Unity object list clear.
+    /// </summary>
+    [SerializeField] private Transform _bulletContainer;
+
+    [SerializeField] private CannonTrigger _cannonTrigger;
     // Start is called before the first frame update
     void Start()
     {
         if (_baseBulletPrefab == null)
         {
             throw new Exception("Base bullet prefab not found!");
+        }
+
+        if (_cannonTrigger == null)
+        {
+            throw new Exception("CannonTrigger mot found!");
         }
 
         InputReader.RegisterReload(this.Reload);
@@ -29,6 +40,7 @@ public class CannonLoader : MonoBehaviour
 
     void Reload()
     {
-        Instantiate(_baseBulletPrefab, _bulletSpawner);
+        var newBullet = Instantiate(_baseBulletPrefab, _bulletSpawner.position, Quaternion.identity, _bulletContainer);
+        _cannonTrigger.ArmProjectile(newBullet);
     }
 }

@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5433284783855110323}
+  - component: {fileID: 1369481470578634117}
+  - component: {fileID: 391167746961923721}
   m_Layer: 0
   m_Name: CurtainSegment
   m_TagString: Untagged
@@ -36,6 +38,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1369481470578634117
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5433284783855110320}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1, y: 1.1, z: 1.1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &391167746961923721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5433284783855110320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5ab70e907c675844bdd220dbba07a55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _chainHead: {fileID: 3436331150770368822}
+  _testAgainstLayers:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1001 &3737631495309604719
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -413,6 +444,12 @@ PrefabInstance:
 --- !u!4 &7412123414406716424 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4564991153737636640, guid: bd702ac36c9785440a183b6f6917db8c,
+    type: 3}
+  m_PrefabInstance: {fileID: 6451192877254199080}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &3436331150770368822 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 8518401758509315614, guid: bd702ac36c9785440a183b6f6917db8c,
     type: 3}
   m_PrefabInstance: {fileID: 6451192877254199080}
   m_PrefabAsset: {fileID: 0}

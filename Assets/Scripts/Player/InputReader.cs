@@ -11,8 +11,11 @@ namespace Assets.Scripts.Player
     public class InputReader : MonoBehaviour
     {
         private static UnityAction _reloadHandler = null;
+        private static UnityAction _shootHandler = null;
         [SerializeField]
         private KeyCode ReloadKey = KeyCode.R;
+        [SerializeField]
+        private KeyCode ShootKey = KeyCode.Space;
 
         public static Vector2 ReadAxes { get; private set; }
 
@@ -28,11 +31,20 @@ namespace Assets.Scripts.Player
             _reloadHandler += handler;
         }
 
+        public static void RegisterShoot(UnityAction handler)
+        {
+            _shootHandler += handler;
+        }
+
         private void ChkKeys()
         {
             if (Input.GetKeyDown(ReloadKey))
             {
                 _reloadHandler?.Invoke();
+            }
+            if (Input.GetKeyDown(ShootKey))
+            {
+                _shootHandler?.Invoke();
             }
         }
     }
