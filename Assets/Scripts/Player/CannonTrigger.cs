@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class CannonTrigger : MonoBehaviour
 {
+    private const float SpringForce = 10000;
     private GameObject _loadedProjectile = null;
     private Rigidbody _loadedProjRigidBody;
     [SerializeField]
@@ -34,8 +35,14 @@ public class CannonTrigger : MonoBehaviour
     public void ArmProjectile(GameObject projectile)
     {
         _loadedProjectile = projectile;
-        _activeSpringJoint = _cannonBarrel.AddComponent<SpringJoint>();
+        if (_cannonBarrel.TryGetComponent<SpringJoint>(out _activeSpringJoint) == false)
+        {
+            _activeSpringJoint = _cannonBarrel.AddComponent<SpringJoint>();
+        }
+        
         _activeSpringJoint.connectedBody = _loadedProjRigidBody = _loadedProjectile.GetComponent<Rigidbody>();
+        _activeSpringJoint.spring = SpringForce;
+        _activeSpringJoint.damper = 0.0f;
     }
 
     private void Shoot()
@@ -45,11 +52,11 @@ public class CannonTrigger : MonoBehaviour
             return;
         }
 
-        var forceDirVector = (_cannonTransform.rotation*_cannonBarrel.transform.rotation)*Vector3.right;
+        var forceDirVector = (_cannonTransform.rotation*_cannonBarrel.transform.localRotation)*Vector3.right;
         //forceDirVector = _cannonBarrel.transform.rotation * forceDirVector;
         forceDirVector *= _shotForce;
         _loadedProjRigidBody.AddForce(forceDirVector);
-
+        
         _activeSpringJoint.connectedBody = null;
         _loadedProjectile = null;
     }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Assets.Scripts.Utility;
 using UnityEngine;
 
 
@@ -30,9 +31,7 @@ public class ChainHeadBreaker : MonoBehaviour
 
     void OnTriggerEnter(Collider _colliderData)
     {
-        int colliderValue = 1 << _colliderData.gameObject.layer;
-        int testForBullet = colliderValue & _testAgainstLayers;
-        if (testForBullet != 0)
+        if (Comparator.CompareLayers(_testAgainstLayers, _colliderData.gameObject.layer))
         {
             _chainHead.isKinematic = false;
         }

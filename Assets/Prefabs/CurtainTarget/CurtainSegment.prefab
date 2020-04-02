@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5433284783855110323}
   - component: {fileID: 1369481470578634117}
   - component: {fileID: 391167746961923721}
+  - component: {fileID: 741516156228227759}
   m_Layer: 0
   m_Name: CurtainSegment
   m_TagString: Untagged
@@ -67,6 +68,18 @@ MonoBehaviour:
   _testAgainstLayers:
     serializedVersion: 2
     m_Bits: 256
+--- !u!114 &741516156228227759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5433284783855110320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcbace9aeb4e2ed4290b19e13a3ca5ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3737631495309604719
 PrefabInstance:
   m_ObjectHideFlags: 0

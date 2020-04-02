@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3170274000908861596}
   - component: {fileID: 2183609614056455485}
   - component: {fileID: 2422416535138690454}
+  - component: {fileID: 1407706669569881495}
   m_Layer: 0
   m_Name: Bottom
   m_TagString: Untagged
@@ -109,6 +110,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1407706669569881495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2315633716935894322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78e6d177216a8e94ea7a74c629901c17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _reactsToLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  _destroyedColor: {r: 1, g: 0, b: 0.77521896, a: 0}
 --- !u!1 &3570103046928861009
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,6 +141,7 @@ GameObject:
   - component: {fileID: 5735502813037951929}
   - component: {fileID: 5735502813037951928}
   - component: {fileID: 5735502813037951925}
+  - component: {fileID: 1213839949184651950}
   m_Layer: 0
   m_Name: Top
   m_TagString: Untagged
@@ -231,7 +249,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 1.0500062, z: 0}
+  m_ConnectedAnchor: {x: 0, y: 1.05, z: 0}
   m_UseSpring: 1
   m_Spring:
     spring: 1.05
@@ -270,6 +288,22 @@ MonoBehaviour:
   _rotationForce: 10
   _forceVectorNormalized: {x: 1, y: 0, z: 0}
   _maxVelocity: 1
+--- !u!114 &1213839949184651950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3570103046928861009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78e6d177216a8e94ea7a74c629901c17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _reactsToLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  _destroyedColor: {r: 1, g: 0, b: 0.8427868, a: 0}
 --- !u!1 &4127670043642965325
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,6 +319,7 @@ GameObject:
   - component: {fileID: 5735502813037951927}
   - component: {fileID: 5735502813037951926}
   - component: {fileID: 5735502813037951924}
+  - component: {fileID: 4954994561189931106}
   m_Layer: 0
   m_Name: Middle
   m_TagString: Untagged
@@ -392,7 +427,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 1.0499878, z: 0}
+  m_ConnectedAnchor: {x: 0, y: 1.05, z: 0}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -431,6 +466,22 @@ MonoBehaviour:
   _rotationForce: 10
   _forceVectorNormalized: {x: -1, y: 0, z: 0}
   _maxVelocity: 1
+--- !u!114 &4954994561189931106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4127670043642965325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78e6d177216a8e94ea7a74c629901c17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _reactsToLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  _destroyedColor: {r: 1, g: 0, b: 0.8391533, a: 0}
 --- !u!1 &5180717819777409399
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,8 +491,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1939451503318037302}
+  - component: {fileID: 2937162145950324380}
   m_Layer: 0
-  m_Name: Target
+  m_Name: StandingTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -464,3 +516,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2937162145950324380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5180717819777409399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcbace9aeb4e2ed4290b19e13a3ca5ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

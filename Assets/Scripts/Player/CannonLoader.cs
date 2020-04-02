@@ -16,6 +16,10 @@ public class CannonLoader : MonoBehaviour
     [SerializeField] private Transform _bulletContainer;
 
     [SerializeField] private CannonTrigger _cannonTrigger;
+    /// <summary>
+    /// Is any bullet already present in the chamber?
+    /// </summary>
+    private bool _isBulletPresent;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,7 +44,20 @@ public class CannonLoader : MonoBehaviour
 
     void Reload()
     {
-        var newBullet = Instantiate(_baseBulletPrefab, _bulletSpawner.position, Quaternion.identity, _bulletContainer);
-        _cannonTrigger.ArmProjectile(newBullet);
+        if (_isBulletPresent == false)
+        {
+            var newBullet = Instantiate(_baseBulletPrefab, _bulletSpawner.position, Quaternion.identity, _bulletContainer);
+            _cannonTrigger.ArmProjectile(newBullet);
+        }
+    }
+    
+    public void BulletInChamber()
+    {
+        _isBulletPresent = true;
+    }
+
+    public void BulletLeftChamber()
+    {
+        _isBulletPresent = false;
     }
 }

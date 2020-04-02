@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4564991153737636641}
   - component: {fileID: 8518401758509315614}
   - component: {fileID: 5938063142411261086}
+  - component: {fileID: 6260923360190616482}
   m_Layer: 0
   m_Name: SimpleSegment
   m_TagString: Untagged
@@ -205,3 +206,19 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &6260923360190616482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4564991153737636643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78e6d177216a8e94ea7a74c629901c17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _reactsToLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  _destroyedColor: {r: 1, g: 0, b: 0.8579731, a: 0}

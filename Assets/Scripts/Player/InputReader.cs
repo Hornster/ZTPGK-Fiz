@@ -12,10 +12,13 @@ namespace Assets.Scripts.Player
     {
         private static UnityAction _reloadHandler = null;
         private static UnityAction _shootHandler = null;
+        private static UnityAction _exitGameHandler = null;
         [SerializeField]
         private KeyCode ReloadKey = KeyCode.R;
         [SerializeField]
         private KeyCode ShootKey = KeyCode.Space;
+        [SerializeField]
+        private KeyCode ExitKey = KeyCode.Escape;
 
         public static Vector2 ReadAxes { get; private set; }
 
@@ -36,6 +39,11 @@ namespace Assets.Scripts.Player
             _shootHandler += handler;
         }
 
+        public static void RegisterExit(UnityAction handler)
+        {
+            _exitGameHandler += handler;
+        }
+
         private void ChkKeys()
         {
             if (Input.GetKeyDown(ReloadKey))
@@ -45,6 +53,11 @@ namespace Assets.Scripts.Player
             if (Input.GetKeyDown(ShootKey))
             {
                 _shootHandler?.Invoke();
+            }
+
+            if (Input.GetKeyDown(ExitKey))
+            {
+                _exitGameHandler?.Invoke();
             }
         }
     }
