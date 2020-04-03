@@ -4,10 +4,14 @@ using Assets.Scripts.Utility;
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// Reports changes connected with bullet presence in area designated by
+/// a trigger-type collider.
+/// </summary>
 public class BulletDetector : MonoBehaviour
 {
     /// <summary>
-    /// 
+    /// Handlers for bullet detected in barrel event are connected here.
     /// </summary>
     [SerializeField]
     private UnityEvent _bulletDetected;

@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using Assets.Scripts.Utility;
 using UnityEngine;
 
-
+/// <summary>
+/// Used to break the heads of mid-air hanging chains.cja dla głowy 
+/// </summary>
 public class ChainHeadBreaker : MonoBehaviour
 {
     [SerializeField]

@@ -10,6 +10,9 @@ using UnityEngine.Events;
 
 namespace Assets.Scripts.Target
 {
+    /// <summary>
+    /// Class defining behavior of a smallest part of entire target.
+    /// </summary>
     public class TargetComponent : MonoBehaviour, ITargetComponent
     {
         private UnityAction _reportTakingHit;

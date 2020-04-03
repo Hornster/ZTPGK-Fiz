@@ -4,6 +4,10 @@ using Assets.Scripts.Target.Interface;
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// Counts the amount of destroyed targets and checks how much of these are left to
+/// fulfill the objective.
+/// </summary>
 public class TargetCounter : MonoBehaviour
 {
     [SerializeField] private UnityEvent _reportTargetsDestroyed;
@@ -32,13 +36,9 @@ public class TargetCounter : MonoBehaviour
             target.RegisterObserveTargetDestroy(TargetDestroyed);
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    /// <summary>
+    /// Handler for event of target destruction.
+    /// </summary>
     private void TargetDestroyed()
     {
         _destroyedTargets++;

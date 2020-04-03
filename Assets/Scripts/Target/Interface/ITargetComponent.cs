@@ -7,6 +7,9 @@ using UnityEngine.Events;
 
 namespace Assets.Scripts.Target.Interface
 {
+    /// <summary>
+    /// Provides event registration for observer patter.
+    /// </summary>
     public interface ITargetComponent
     {
         /// <summary>

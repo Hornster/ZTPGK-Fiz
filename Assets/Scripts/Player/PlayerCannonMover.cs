@@ -2,6 +2,9 @@
 
 namespace Assets.Scripts.Player
 {
+    /// <summary>
+    /// Manages cannon movement.
+    /// </summary>
     public class PlayerCannonMover : MonoBehaviour
     {
         [SerializeField] private Transform _baseTransform;

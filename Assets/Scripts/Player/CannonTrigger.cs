@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using Assets.Scripts.Player;
 using UnityEngine;
 
+/// <summary>
+/// Responsible for shooting a loaded projectile and making sure that,
+/// right after spawning, it does not fall out of the cannon.
+/// </summary>
 public class CannonTrigger : MonoBehaviour
 {
     private const float SpringForce = 10000;
@@ -25,13 +29,11 @@ public class CannonTrigger : MonoBehaviour
     {
         InputReader.RegisterShoot(Shoot);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    
+    /// <summary>
+    /// Configures the spring that holds the armed projectile in the barrel.
+    /// </summary>
+    /// <param name="projectile"></param>
     public void ArmProjectile(GameObject projectile)
     {
         _loadedProjectile = projectile;
@@ -44,7 +46,9 @@ public class CannonTrigger : MonoBehaviour
         _activeSpringJoint.spring = SpringForce;
         _activeSpringJoint.damper = 0.0f;
     }
-
+    /// <summary>
+    /// Applies force to the projectile and releases the spring.
+    /// </summary>
     private void Shoot()
     {
         if (_loadedProjectile == null)
@@ -53,7 +57,7 @@ public class CannonTrigger : MonoBehaviour
         }
 
         var forceDirVector = (_cannonTransform.rotation*_cannonBarrel.transform.localRotation)*Vector3.right;
-        //forceDirVector = _cannonBarrel.transform.rotation * forceDirVector;
+        
         forceDirVector *= _shotForce;
         _loadedProjRigidBody.AddForce(forceDirVector);
         

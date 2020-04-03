@@ -9,6 +9,9 @@ using UnityEngine.Events;
 
 namespace Assets.Scripts.Target
 {
+    /// <summary>
+    /// Defines the target of the player.
+    /// </summary>
     public class Target : MonoBehaviour, ITarget
     {
         private UnityAction _targetDestructionObservers;
